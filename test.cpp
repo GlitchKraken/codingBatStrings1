@@ -4,6 +4,8 @@
 	Extra Credit points!
 	String Challenges
 
+	lessons learned:
+	(1) how to use gitHub
 */
 
 
@@ -21,6 +23,7 @@ string makeOutWord(string out, string word);
 string extraEnd(string str);
 string firstTwo(string str);
 string firstHalf(string str);
+string withoutEnd(string str);
 
 
 
@@ -48,11 +51,16 @@ int main()
 	//assert(firstTwo("ab") == "ab");
 	//assert(firstTwo("X") == "X");
 	//assert(firstTwo("") == "");
-	assert(firstHalf("WooHoo") == "Woo");
-	assert(firstHalf("HelloThere") == "Hello");
-	assert(firstHalf("abcdef") == "abc");
-	assert(firstHalf("JohnCena") == "John");
-    assert(firstHalf("Java") == "Ja");
+	//assert(firstHalf("WooHoo") == "Woo");
+	//assert(firstHalf("HelloThere") == "Hello");
+	//assert(firstHalf("abcdef") == "abc");
+	//assert(firstHalf("JohnCena") == "John");
+    //assert(firstHalf("Java") == "Ja");
+    assert(withoutEnd("Hello") == "ell");
+    assert(withoutEnd("java") == "av");
+    assert(withoutEnd("coding") == "odin");
+    assert(withoutEnd("Bye") == "y");
+    assert(withoutEnd("hi") == "");
 
 	return 0;
 }
@@ -66,7 +74,7 @@ string makeTags(string tag, string word)
 
 
 	return result;
-}
+}//end makeTags(string tag, string word)
 
 string makeOutWord(string out, string word)
 {
@@ -75,7 +83,7 @@ string makeOutWord(string out, string word)
 	result = out.substr(0,2) + word + out.substr(2,2);
 
 	return result;
-}
+}//end makeOutWord(string out, string word)
 
 string extraEnd(string str)
 {
@@ -87,7 +95,7 @@ string extraEnd(string str)
 	result += (str.substr( (str.length() - 2), (2) )  );
 
 	return result;
-}
+}//end extraEnd(string str)
 
 string firstTwo(string str)
 {
@@ -103,7 +111,8 @@ string firstTwo(string str)
 		return result;
 	}
 
-}
+}//end firstTwo(string str)
+
 string firstHalf(string str)
 {
 	string result;
@@ -111,4 +120,13 @@ string firstHalf(string str)
 	result = (str.substr(0, str.length()/2) );
 
 	return result;
-}
+}//end firstHalf(string str)
+
+string withoutEnd(string str)
+{
+	string result;
+
+	result = str.substr(1,str.length()-2);
+
+	return result;
+}//end withoutEnd(string str)
