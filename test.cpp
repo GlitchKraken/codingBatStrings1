@@ -24,6 +24,7 @@ string extraEnd(string str);
 string firstTwo(string str);
 string firstHalf(string str);
 string withoutEnd(string str);
+string comboString(string a, string b);
 
 
 
@@ -56,11 +57,16 @@ int main()
 	//assert(firstHalf("abcdef") == "abc");
 	//assert(firstHalf("JohnCena") == "John");
     //assert(firstHalf("Java") == "Ja");
-    assert(withoutEnd("Hello") == "ell");
-    assert(withoutEnd("java") == "av");
-    assert(withoutEnd("coding") == "odin");
-    assert(withoutEnd("Bye") == "y");
-    assert(withoutEnd("hi") == "");
+    //assert(withoutEnd("Hello") == "ell");
+    //assert(withoutEnd("java") == "av");
+    //assert(withoutEnd("coding") == "odin");
+    //assert(withoutEnd("Bye") == "y");
+    //assert(withoutEnd("hi") == "");
+    assert(comboString("Hello", "hi") == "hiHellohi");
+    assert(comboString("hi", "Hello") == "hiHellohi");
+    assert(comboString("aaa", "b") == "baaab");
+    assert(comboString("Java", "Python") == "JavaPythonJava");
+    assert(comboString("Short", "Long") == "LongShortLong");
 
 	return 0;
 }
@@ -130,3 +136,26 @@ string withoutEnd(string str)
 
 	return result;
 }//end withoutEnd(string str)
+
+string comboString(string a, string b)
+{
+	string result;
+	string shortStr;
+	string longStr;
+
+	if( a.length() > b.length())
+	{
+		longStr = a;
+		shortStr = b;
+	}
+	else
+	{
+		longStr = b;
+		shortStr = a;
+	}
+
+	result = (shortStr + longStr + shortStr);
+
+
+	return result;
+}//end comboString
