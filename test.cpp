@@ -20,6 +20,7 @@ string makeTags(string tag, string word);
 string makeOutWord(string out, string word);
 string extraEnd(string str);
 string firstTwo(string str);
+string firstHalf(string str);
 
 
 
@@ -42,11 +43,16 @@ int main()
 	//assert(extraEnd("Hi") == "HiHiHi");
 	//assert(extraEnd("Java") == "vavava");
 	//assert(extraEnd("Python") == "ononon");
-	assert(firstTwo("Hello") == "He");
-	assert(firstTwo("abcdefg") == "ab");
-	assert(firstTwo("ab") == "ab");
-	assert(firstTwo("X") == "X");
-	assert(firstTwo("") == "");
+	//assert(firstTwo("Hello") == "He");
+	//assert(firstTwo("abcdefg") == "ab");
+	//assert(firstTwo("ab") == "ab");
+	//assert(firstTwo("X") == "X");
+	//assert(firstTwo("") == "");
+	assert(firstHalf("WooHoo") == "Woo");
+	assert(firstHalf("HelloThere") == "Hello");
+	assert(firstHalf("abcdef") == "abc");
+	assert(firstHalf("JohnCena") == "John");
+    assert(firstHalf("Java") == "Ja");
 
 	return 0;
 }
@@ -97,4 +103,12 @@ string firstTwo(string str)
 		return result;
 	}
 
+}
+string firstHalf(string str)
+{
+	string result;
+
+	result = (str.substr(0, str.length()/2) );
+
+	return result;
 }
