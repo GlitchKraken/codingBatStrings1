@@ -18,7 +18,7 @@ using namespace std;
 
 string makeTags(string tag, string word);
 string makeOutWord(string out, string word);
-
+string extraEnd(string str);
 
 
 
@@ -31,13 +31,17 @@ int main()
 	//assert(makeTags("cite", "Yay") == "<cite>Yay</cite>");
 	//assert(makeTags("b", "Bold") == "<b>Bold</b>");
 	//assert(makeTags("I", "Italics") == "<I>Italics</I>");
-	assert(makeOutWord("<<>>", "Yay") == "<<Yay>>");
-	assert(makeOutWord("<<>>", "WooHoo") == "<<WooHoo>>");
-	assert(makeOutWord("[[]]", "word") == "[[word]]");
-	assert(makeOutWord("!!!!", "Wow") == "!!Wow!!");
-	assert(makeOutWord("????", "What") == "??What??");
-
-
+	//assert(makeOutWord("<<>>", "Yay") == "<<Yay>>");
+	//assert(makeOutWord("<<>>", "WooHoo") == "<<WooHoo>>");
+	//assert(makeOutWord("[[]]", "word") == "[[word]]");
+	//assert(makeOutWord("!!!!", "Wow") == "!!Wow!!");
+	//assert(makeOutWord("????", "What") == "??What??");
+	assert(extraEnd("Hello") == "lololo");
+	assert(extraEnd("ab") == "ababab");
+	assert(extraEnd("Hi") == "HiHiHi");
+	assert(extraEnd("Java") == "vavava");
+	assert(extraEnd("Python") == "ononon");
+	
 
 
 
@@ -61,6 +65,18 @@ string makeOutWord(string out, string word)
 	string result;
 
 	result = out.substr(0,2) + word + out.substr(2,2);
+
+	return result;
+}
+
+string extraEnd(string str)
+{
+	string result;
+
+
+	result = (str.substr( (str.length() - 2), (2) )  );
+	result += (str.substr( (str.length() - 2), (2) )  );
+	result += (str.substr( (str.length() - 2), (2) )  );
 
 	return result;
 }
