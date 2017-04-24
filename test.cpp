@@ -19,6 +19,7 @@ using namespace std;
 string makeTags(string tag, string word);
 string makeOutWord(string out, string word);
 string extraEnd(string str);
+string firstTwo(string str);
 
 
 
@@ -36,15 +37,16 @@ int main()
 	//assert(makeOutWord("[[]]", "word") == "[[word]]");
 	//assert(makeOutWord("!!!!", "Wow") == "!!Wow!!");
 	//assert(makeOutWord("????", "What") == "??What??");
-	assert(extraEnd("Hello") == "lololo");
-	assert(extraEnd("ab") == "ababab");
-	assert(extraEnd("Hi") == "HiHiHi");
-	assert(extraEnd("Java") == "vavava");
-	assert(extraEnd("Python") == "ononon");
-	
-
-
-
+	//assert(extraEnd("Hello") == "lololo");
+	//assert(extraEnd("ab") == "ababab");
+	//assert(extraEnd("Hi") == "HiHiHi");
+	//assert(extraEnd("Java") == "vavava");
+	//assert(extraEnd("Python") == "ononon");
+	assert(firstTwo("Hello") == "He");
+	assert(firstTwo("abcdefg") == "ab");
+	assert(firstTwo("ab") == "ab");
+	assert(firstTwo("X") == "X");
+	assert(firstTwo("") == "");
 
 	return 0;
 }
@@ -79,4 +81,20 @@ string extraEnd(string str)
 	result += (str.substr( (str.length() - 2), (2) )  );
 
 	return result;
+}
+
+string firstTwo(string str)
+{
+	string result;
+
+	if (str.length() < 2)
+	{
+		return str;
+	}
+	else
+	{
+		result = str.substr(0,2);
+		return result;
+	}
+
 }
